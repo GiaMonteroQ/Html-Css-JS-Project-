@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 1.Archivo de reset -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!--2. Archivos de google font G-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="https://kit.fontawesome.com/5185a7a81a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Secular+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!--3. Estilo archivo css-->
+    <link rel="stylesheet" href="/css/mantenimiento/mantenimientoCadenasCine.css">
+    <link rel="stylesheet" href="/css/general.css">
+
+    <title>Cadenas Cine | Tico-Cinemas</title>
+</head>
+
+<body>
+    <!--Header principal G-->
+    <header class="header-principal">
+        <div class="logo">
+            <a href="/html/index.html">
+                <img src="" alt="">
+                <img src="/img/logo2.jpeg" alt="">
+            </a>
+        </div>
+        <nav>
+            <button class="btn-general ">
+            <a href="/html/menus/menuDeAdmin.html "> Menu Admin</a>
+            </button> `
+            <button class="btn-general ">
+                <a href="/html/index.html "> 
+                    <i class="fas fa-home"></i>
+                </a>
+            </button>
+        </nav>
+    </header>
+    <!--Sección de central-->
+    <main>
+        <section class=cadenasFormulario>
+            <div class="menuVertical">
+                <button class="tablinks" onclick="abrirMenu(event, 'agregar-cadena')" id="defaultOpen">Agregar cadenas de cines</button>
+                <button class="tablinks" onclick="abrirMenu(event, 'lista-cadena')">Lista de cadenas de cines</button>
+                <button class="tablinks" onclick="abrirMenu(event, 'asignar-sala')">Asignar salas a cadenas</button>
+                <button class="tablinks" onclick="abrirMenu(event, 'lista-salas-cadena')">Lista de salas por cadenas</button>
+            </div>
+            <div id="agregar-cadena" class="tabcontent">
+                <h2>Mantenimiento de cátalogos del sistema</h2>
+                <h3>Agregar cadenas de cines</h3>
+                <div class="bloquegeneral">
+                    <div class="bloque1">
+                        <form class="formulario" action="">
+                            <div class="input-default">
+                                <label for="codigoCadena"> Asignar código: </label>
+                                <input type="text" class="div-codigoCadena" id="codigoCadena" required>
+                            </div>
+                            <div class="input-default">
+                                <label for="codigoCadenaNombre"> Asignar nombre de cadena: </label>
+                                <input type="text" class="div-codigoCadenaNombre" id="txt-nombreCadenaCine" required>
+                            </div>
+                            <div class="input-default">
+                                <label for="lugar"> Indique lugar: </label>
+                                <input type="text" class="div-lugar" id="txt-nombreLugarCadenaCine" required>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="bloque2">
+                        <form class="formulario" action="">
+                            <label for="provincia"> Seleccionar provincia: </label>
+                            <select name="provincia" class="div-provincia" id="provincia">
+                            <option value="0"></option>
+                            <option value="1">San José</option>
+                            <option value="2">Heredia</option>
+                            <option value="3">Cartago</option> 
+                            <option value="3">Guanacaste</option> 
+                            <option value="3">Puntarenas</option> 
+                            <option value="3">Limón</option> 
+                        </select>
+                            <label for="canton"> Seleccionar cantón: </label>
+                            <select name="canton" class="div-canton" id="canton">
+                            <option value="0"></option>
+                            <option value="1">San José</option>
+                            <option value="2">Montes de Oca</option>
+                            <option value="3">Cédula (nacionales)</option> 
+                        </select>
+                            <label for="distrito"> Seleccionar distrito: </label>
+                            <select name="distrito" class="div-distrito" id="distrito">
+                            <option value="0"></option>
+                            <option value="1">Pavas</option>
+                            <option value="2">Sabanilla</option>
+                            <option value="3">San Rafael</option> 
+                        </select>
+
+                        </form>
+                    </div>
+                    <div class="bloque3">
+                        <form class="formulario" action="">
+                            <label for="logoCadena"> Subir logo: </label>
+                            <div class="img-perfil">
+
+                                <img src="/img/Upload-Transparent.png" alt="" id="logoCadena">
+                            </div>
+                            <button class="btn-general" id="btn-registrar">Subir</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="agregar">
+                    <button class="btn-general" id="ingresar-cadena">Ingresar datos de cadena</button>
+                </div>
+            </div>
+
+
+            <div id="lista-cadena" class="tabcontent">
+                <h2>Mantenimiento de cátalogos del sistema</h2>
+                <h3>Lista cadenas de cines</h3>
+                <form class="form-buscar">
+                    <div class="input-default">
+                        <span class="material-icons">
+                            search
+                        </span>
+                        <input type="text" id="txt-buscar">
+                    </div>
+                    <div class="input-default">
+                        <button type="button" class="btn-general" id="guardar-usuario">
+                        Modificar
+                    </button>
+                        <span class="material-icons">
+                        delete
+                    </span>
+                    </div>
+                </form>
+
+                <section class=tblCadenas>
+                    <table class="Table" id="tbl-cadenas">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nombre de Cadena</th>
+                                <th colspan="4">Ubicación</th>
+                                <th colspan="4">Logo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>000</td>
+                                <td>Default</td>
+                                <td>Provincia</td>
+                                <td>Cantón</td>
+                                <td>Distrito</td>
+                                <td>Lugar</td>
+                                <td>Logo</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td>Cinemark</td>
+                                <td>San José</td>
+                                <td>Montes de Oca</td>
+                                <td>San Pedro</td>
+                                <td>Mall San Pedro</td>
+                                <td>Logo</td>
+                            </tr>
+                            <tr>
+                                <td>200</td>
+                                <td>Magaly</td>
+                                <td>San José</td>
+                                <td>San José</td>
+                                <td>Barrio La California</td>
+                                <td>Frente al Observario</td>
+                                <td>Logo</td>
+                            </tr>
+                            <tr>
+                                <td>300</td>
+                                <td>Cinepolis</td>
+                                <td>Cartago</td>
+                                <td>La Unión</td>
+                                <td>Tres Ríos</td>
+                                <td>Terramall</td>
+                                <td>Logo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+
+            </div>
+            <div id="asignar-sala" class="tabcontent">
+
+                <section class=salasFormulario>
+                    <h2>Mantenimiento de cátalogos del sistema</h2>
+                    <h3>Asignar salas a las cadenas de cine</h3>
+                    <div class="bloquegeneral">
+                        <div class="bloque1">
+                            <form class="formulario" action="">
+                                <label class="notas" for="">Seleccione nombre de la cadena: </label>
+                                <select id="">
+                                    <option value="0"></option>
+                                    <option value="1">Cinemark</option>
+                                    <option value="2">Cinépolis</option>
+                                    <option value="3">Sala Garbo</option>  
+                                </select>
+                                <label for=""> Lugar </label>
+                                <select id="">
+                                    <option value="0"></option>
+                                    <option value="1">Terramall</option>
+                                    <option value="2">Mall San Pedro</option>
+                                    <option value="3">Multiplaza</option>  
+                                </select>
+                                <label for=""> Ingrese código de sala: </label>
+                                <input type="text" id="codigoSala">
+                                <label for="tipoSala"> Seleccionar tipo de sala: </label>
+                                <select name="provincia" id="">
+                                    <option value="0"></option>
+                                    <option value="1">Regular</option>
+                                    <option value="2">VIP</option>
+                                    <option value="3">3D</option> 
+                                </select>
+
+                            </form>
+                            <div class="asignar">
+                                <button class="btn-general">Asignar Salas</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+
+            <div id="lista-salas-cadena" class="tabcontent">
+                <h2>Mantenimiento de cátalogos del sistema</h2>
+                <h3>Lista salas asignadas a cadenas de cines</h3>
+                <form class="form-buscar">
+                    <div class="input-default">
+                        <span class="material-icons">
+                            search
+                        </span>
+                        <input type="text" id="txt-buscar">
+                    </div>
+                    <div class="input-default">
+                        <button type="button" class="btn-general" id="guardar-usuario">
+                        Modificar
+                    </button>
+                        <span class="material-icons">
+                        delete
+                    </span>
+                    </div>
+                </form>
+                <section class=tblSalas>
+
+                    <table class="Table" id="tbl-salas">
+                        <thead>
+                            <tr>
+                                <th>No. de Cadena</th>
+                                <th>Nombre de Cadena</th>
+                                <th>Lugar</th>
+                                <th>No. de Cadena</th>
+                                <th>Tipo de Sala</th>
+                                <th>Costo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>100</td>
+                                <td>Cinemark</td>
+                                <td>Mall San Pedro</td>
+                                <td>1</td>
+                                <td>Regular</td>
+                                <td>3,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td>Cinemark</td>
+                                <td>Mall San Pedro</td>
+                                <td>2</td>
+                                <td>VIP</td>
+                                <td>5,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td>Cinemark</td>
+                                <td>Mall San Pedro</td>
+                                <td>3</td>
+                                <td>3D</td>
+                                <td>5,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>200</td>
+                                <td>Magaly</td>
+                                <td>Barrio California</td>
+                                <td>A</td>
+                                <td>Regular</td>
+                                <td>4,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>200</td>
+                                <td>Magaly</td>
+                                <td>Barrio California</td>
+                                <td>B</td>
+                                <td>Regular</td>
+                                <td>4,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>300</td>
+                                <td>Cinepolis</td>
+                                <td>Terramall</td>
+                                <td>1</td>
+                                <td>Regular</td>
+                                <td>3,000.00</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+
+
+        </section>
+    </main>
+
+    <!--JavaScript-->
+    <script src="/js/mantenimiento/mantenimientoCadenasCine.js"></script>
+    <script src="/js/servicios-general.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!--Footer G-->
+    <footer>
+        <div class="container">
+            <!--Todo class debe llevar la sección a la que peretenece-->
+            <div class="row">
+                <div class="columna">
+                    <h8>
+                        ¿Quiénes somos?
+                    </h8>
+                </div>
+                <div class="columna">
+                    <h8>
+                        Redes Sociales
+                    </h8>
+                    <ul class="redes">
+                        <li>
+                            <a href="# ">
+                                <i class="fab fa-facebook-square "></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="# ">
+                                <i class="fab fa-linkedin "></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="# ">
+                                <i class="fab fa-instagram "></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="columna ">
+                    <h8>
+                        Contáctenos
+                    </h8>
+                    <ul class="contactos">
+                        <li>
+                            <a href="https://api.whatsapp.com/send/?phone=50683077557&text=Hola+Tico-Cinemas te saluda+&app_absent=0 ">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="# ">
+                                <i class="far fa-envelope"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="barra-footer ">
+            &copy; Derechos Reservados - 2021
+        </div>
+    </footer>
+
+</body>
+<!--JavaScript-->
+
+
+</html>
